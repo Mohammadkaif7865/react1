@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import Junk from './Junk.js';
 import './App.css';
 
