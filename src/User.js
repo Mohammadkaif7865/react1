@@ -1,7 +1,7 @@
 function User() {
     return (
       <div className="App">
-       <h1>Hello User!</h1>
+       <h1>This is a user component</h1>
       </div>
     );
   }
