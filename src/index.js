@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Class from './Classc.js'
-import User from'./User.js';
+import User from './User.js';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +12,6 @@ root.render(
     <App />
     <User />
     <Class />
-
   </React.StrictMode>
 );
 
