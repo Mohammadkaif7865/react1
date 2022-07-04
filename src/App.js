@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import Junk from './Junk.js';  How to import component in react 
 import './App.css';
 // import Student  from './Students.js';
-import Student from './Student.js'
+import Student from './Student.js';
 class App extends Component {
   constructor() {
     super();
