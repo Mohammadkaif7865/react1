@@ -1,23 +1,88 @@
-import React,{ useState } from 'react';
+import React, { useState } from "react";
 // import React, { Component } from 'react';
-// import Junk from './Junk.js';  How to import component in react 
-import './App.css';
+// import Junk from './Junk.js';  How to import component in react
+import "./App.css";
 // import Student  from './Students.js';
 // import Student from './Student.js';
-//Hide show element in react 
+//form handling
 function App() {
-  let [status,setStatus] = useState(true);
-  return(
-    <div className="App">
-      {
-        status?<h1>this is going to hide !!</h1>:null
-      }
-      {/* <button onClick={()=>setStatus(false)}>Hide</button>
-      <button onClick={()=>setStatus(true)}>Show</button> */}
-      <button onClick={()=>setStatus(!status)}>Toggle</button>
+  const [name, setName] = useState("");
+  const [genders, setGenders] = useState("");
+  const [stream, setStream] = useState("");
+  function getData(e) {
+    console.log(name,genders,stream);
+    e.preventDefault();
+  }
+  return (
+    <div className="container">
+      <h1>This is for form handling</h1>
+      <form onSubmit={getData}>
+        <div className="mb-3 mt-3">
+          <label htmlFor="name">Name: </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="form-check">
+          <input
+            type="radio"
+            name="genders"
+            id="male"
+            value="male"
+            onChange={(e) => setGenders(e.target.value)}
+          />
+          <label htmlFor="male">male</label>
+        </div>
+        <div className="form-check">
+          <input
+            type="radio"
+            name="genders"
+            id="female"
+            value="female"
+            onChange={(e) => setGenders(e.target.value)}
+          />
+          <label htmlFor="female">female</label>
+        </div>
+        <div className="form-check">
+          <input
+            type="radio"
+            name="genders"
+            id="trans"
+            value="trans"
+            onChange={(e) => setGenders(e.target.value)}
+          />
+          <label htmlFor="trans">trans</label>
+        </div>
+        <select className="form-select"  onChange={(e) => setStream(e.target.value)}>
+          <option>---Select your stream --------</option>
+          <option>Medical</option>
+          <option>Non-Medical</option>
+          <option>Commerce</option>
+          <option>Humanities</option>
+        </select>
+        <button type="submit" className="btn btn-primary">Submit</button>
+      </form>
     </div>
-  )
+  );
 }
+//Hide show element in react
+// function App() {
+//   let [status,setStatus] = useState(true);
+//   return(
+//     <div className="App">
+//       {
+//         status?<h1>this is going to hide !!</h1>:null
+//       }
+//       {/* <button onClick={()=>setStatus(false)}>Hide</button>
+//       <button onClick={()=>setStatus(true)}>Show</button> */}
+//       <button onClick={()=>setStatus(!status)}>Toggle</button>
+//     </div>
+//   )
+// }
 //getting input box values
 // function App() {
 //   const [data, setData]  = useState(null);
@@ -123,7 +188,6 @@ function App() {
 //   )
 // }
 
-
-//Yes!! we can have component inside a component 
+//Yes!! we can have component inside a component
 
 export default App;
