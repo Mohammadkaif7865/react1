@@ -4,25 +4,34 @@ import React,{ useState } from 'react';
 import './App.css';
 // import Student  from './Students.js';
 // import Student from './Student.js';
+//Hide show element in react 
 function App() {
-  const [data, setData]  = useState(null);
-  const [print, setPrint]  = useState(false);
-  function saveData(data) {
-    // console.log(data.target.value);
-      setData(data.target.value);
-  }
-  function setTrue(){
-   setPrint(true);
-  }
   return(
     <div className="App">
-      {print? <h1>{data}</h1>:null}
-       <label htmlFor="here">input : </label>
-       <input id="here" type="text"  onChange={saveData}/>
-       <button onClick={setTrue}>Print</button>
+      <h1>this is going to hide</h1>
     </div>
   )
 }
+//getting input box values
+// function App() {
+//   const [data, setData]  = useState(null);
+//   const [print, setPrint]  = useState(false);
+//   function saveData(data) {
+//     // console.log(data.target.value);
+//       setData(data.target.value);
+//   }
+//   function setTrue(){
+//    setPrint(true);
+//   }
+//   return(
+//     <div className="App">
+//       {print? <h1>{data}</h1>:null}
+//        <label htmlFor="here">input : </label>
+//        <input id="here" type="text"  onChange={saveData}/>
+//        <button onClick={setTrue}>Print</button>
+//     </div>
+//   )
+// }
 // Class component of App.js and passing props with use of Class component
 // class App extends Component {
 //   constructor() {
