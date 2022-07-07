@@ -65,6 +65,7 @@ function App() {
           <option>Humanities</option>
         </select>
         <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-danger">clear</button>
       </form>
     </div>
   );
