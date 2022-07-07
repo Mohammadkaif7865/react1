@@ -1,27 +1,47 @@
-// import React,{ useState } from 'react';
-import React, { Component } from 'react';
+import React,{ useState } from 'react';
+// import React, { Component } from 'react';
 // import Junk from './Junk.js';  How to import component in react 
 import './App.css';
 // import Student  from './Students.js';
-import Student from './Student.js';
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name : "hola",
-      email: "abc123@gmail.com"
-    }
+// import Student from './Student.js';
+function App() {
+  const [data, setData]  = useState(null);
+  const [print, setPrint]  = useState(false);
+  function saveData(data) {
+    // console.log(data.target.value);
+      setData(data.target.value);
   }
-  render() {
-    return (
-      <div className="App">
-        <h1>Props with class components</h1>
-        <Student name={this.state.name} email={this.state.email} other={{ address: "delhi", mobile: "45346234" }} />
-        <button onClick={()=>{this.setState({name:"sonu",email: "sonu@gmail.com"})}}>change</button>
-      </div>
-    )
+  function setTrue(){
+   setPrint(true);
   }
+  return(
+    <div className="App">
+      {print? <h1>{data}</h1>:null}
+       <label htmlFor="here">input : </label>
+       <input id="here" type="text"  onChange={saveData}/>
+       <button onClick={setTrue}>Print</button>
+    </div>
+  )
 }
+// Class component of App.js and passing props with use of Class component
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       name : "hola",
+//       email: "abc123@gmail.com"
+//     }
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>Props with class components</h1>
+//         <Student name={this.state.name} email={this.state.email} other={{ address: "delhi", mobile: "45346234" }} />
+//         <button onClick={()=>{this.setState({name:"sonu",email: "sonu@gmail.com"})}}>change</button>
+//       </div>
+//     )
+//   }
+// }
 // Props with functional components
 // function App() {
 //   const [name,setName] =useState("Monu");
