@@ -6,9 +6,14 @@ import './App.css';
 // import Student from './Student.js';
 //Hide show element in react 
 function App() {
+  let [status,setStatus] = useState(true);
   return(
     <div className="App">
-      <h1>this is going to hide</h1>
+      {
+        status?<h1>this is going to hide !!</h1>:null
+      }
+      <button onClick={()=>setStatus(false)}>Hide</button>
+      <button onClick={()=>setStatus(true)}>Show</button>
     </div>
   )
 }
