@@ -6,72 +6,79 @@ import "./App.css";
 // import Student from './Student.js';
 //form handling
 function App() {
-  const [name, setName] = useState("");// * this is how you define state in function below
-  const [genders, setGenders] = useState("");// ? you can only change the state in here only
-  const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
-  //TODO : complete the react video
-  function getData(e) {
-    console.log(name,genders,stream);
-    e.preventDefault();
-  }
   return (
-    <div className="container">
-      <h1>This is for form handling</h1>
-      <form onSubmit={getData}>
-        <div className="mb-3 mt-3">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="form-check">
-          <input
-            type="radio"
-            name="genders"
-            id="male"
-            value="male"
-            onChange={(e) => setGenders(e.target.value)}
-          />
-          <label htmlFor="male">male</label>
-        </div>
-        <div className="form-check">
-          <input
-            type="radio"
-            name="genders"
-            id="female"
-            value="female"
-            onChange={(e) => setGenders(e.target.value)}
-          />
-          <label htmlFor="female">female</label>
-        </div>
-        <div className="form-check">
-          <input
-            type="radio"
-            name="genders"
-            id="trans"
-            value="trans"
-            onChange={(e) => setGenders(e.target.value)}
-          />
-          <label htmlFor="trans">trans</label>
-        </div>
-        <select className="form-select"  onChange={(e) => setStream(e.target.value)}>
-          <option>---Select your stream --------</option>
-          <option>Medical</option>
-          <option>Non-Medical</option>
-          <option>Commerce</option>
-          <option>Humanities</option>
-        </select>
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <button type="submit" className="btn btn-danger">clear</button>
-      </form>
+    <div className="App">
+      <h1>App component is rendering</h1>
     </div>
   );
 }
-//Hide show element in react
+// function App() {
+//   const [name, setName] = useState("");// * this is how you define state in function below
+//   const [genders, setGenders] = useState("");// ? you can only change the state in here only
+//   const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
+//   //TODO : complete the react video
+//   function getData(e) {
+//     console.log(name,genders,stream);
+//     e.preventDefault();
+//   }
+//   return (
+//     <div className="container">
+//       <h1>This is for form handling</h1>
+//       <form onSubmit={getData}>
+//         <div className="mb-3 mt-3">
+//           <label htmlFor="name">Name: </label>
+//           <input
+//             type="text"
+//             id="name"
+//             placeholder="Enter your name"
+//             value={name}
+//             onChange={(e) => setName(e.target.value)}
+//           />
+//         </div>
+//         <div className="form-check">
+//           <input
+//             type="radio"
+//             name="genders"
+//             id="male"
+//             value="male"
+//             onChange={(e) => setGenders(e.target.value)}
+//           />
+//           <label htmlFor="male">male</label>
+//         </div>
+//         <div className="form-check">
+//           <input
+//             type="radio"
+//             name="genders"
+//             id="female"
+//             value="female"
+//             onChange={(e) => setGenders(e.target.value)}
+//           />
+//           <label htmlFor="female">female</label>
+//         </div>
+//         <div className="form-check">
+//           <input
+//             type="radio"
+//             name="genders"
+//             id="trans"
+//             value="trans"
+//             onChange={(e) => setGenders(e.target.value)}
+//           />
+//           <label htmlFor="trans">trans</label>
+//         </div>
+//         <select className="form-select"  onChange={(e) => setStream(e.target.value)}>
+//           <option>---Select your stream --------</option>
+//           <option>Medical</option>
+//           <option>Non-Medical</option>
+//           <option>Commerce</option>
+//           <option>Humanities</option>
+//         </select>
+//         <button type="submit" className="btn btn-primary">Submit</button>
+//         <button type="submit" className="btn btn-danger">clear</button>
+//       </form>
+//     </div>
+//   );
+// }
+// //Hide show element in react
 // function App() {
 //   let [status,setStatus] = useState(true);
 //   return(
