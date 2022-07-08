@@ -6,9 +6,10 @@ import "./App.css";
 // import Student from './Student.js';
 //form handling
 function App() {
-  const [name, setName] = useState("");
-  const [genders, setGenders] = useState("");
-  const [stream, setStream] = useState("");
+  const [name, setName] = useState("");// * this is how you define state in function below
+  const [genders, setGenders] = useState("");// ? you can only change the state in here only
+  const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
+  //TODO : complete the react video
   function getData(e) {
     console.log(name,genders,stream);
     e.preventDefault();
