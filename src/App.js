@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Profile from "./Profile";
 // import React, { Component } from 'react';
 // import Junk from './Junk.js';  How to import component in react
 import "./App.css";
@@ -8,7 +9,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>App component is rendering</h1>
+       <Profile></Profile>
     </div>
   );
 }
