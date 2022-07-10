@@ -4,7 +4,7 @@ export default function Profile(props) {
   // * now learning ternary operators
   return (
     <div className="App">
-      {loggedIn==1 ? <h1>Welcome user1</h1> : loggedIn==2 ? <h1>Welcome user2</h1>: <h1>Welcome user</h1>}
+      {loggedIn===1 ? <h1>Welcome user1</h1> : loggedIn===2 ? <h1>Welcome user2</h1>: <h1>Welcome user</h1>}
     </div>
   );
   // ! this if else statements can be replace with ternary operators
