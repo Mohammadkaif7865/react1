@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Profile from "./Profile";
+import Passfun from "./Passfun";
+// import Profile from "./Profile";
 // import React, { Component } from 'react';
 // import Junk from './Junk.js';  How to import component in react
 import "./App.css";
@@ -7,9 +8,12 @@ import "./App.css";
 // import Student from './Student.js';
 //form handling
 function App() {
+   sum = (a,b)=>{
+     return a+b;
+  }
   return (
     <div className="App">
-       <Profile></Profile>
+      <Passfun sum={sum}></Passfun>
     </div>
   );
 }
