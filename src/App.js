@@ -8,7 +8,7 @@ import "./App.css";
 // import Student from './Student.js';
 //form handling
 function App() {
-   sum = (a,b)=>{
+  let  sum = (a,b)=>{
      return a+b;
   }
   return (
