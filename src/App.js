@@ -1,27 +1,43 @@
-import React, { useState } from "react";
-import Passfun from "./Passfun";
+// import React, { useState } from "react";
+// import Passfun from "./Passfun";
 // import Profile from "./Profile";
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 // import Junk from './Junk.js';  How to import component in react
 import "./App.css";
 // import Student  from './Students.js';
 // import Student from './Student.js';
-//form handling
-function App() {
-  let  sum = (a,b)=>{
-     return a+b;
-  }
-  return (
-    <div className="App">
-      <Passfun sum={sum}></Passfun>
-    </div>
-  );
+class App extends Component {
+   constructor(){
+      super();
+      this.state = {
+        data: 'monu'
+      }
+
+   }
+   render() {
+       return(
+        <h1 className="App">Hello there {this.state.data}</h1>
+       )
+   }
 }
+// * passing function in child component
+// function App() {
+//   let  sum = (a,b)=>{
+//      return a+b;
+//   }
+//   return (
+//     <div className="App">
+//       <Passfun sum={sum}></Passfun>
+//     </div>
+//   );
+// }
 // function App() {
 //   const [name, setName] = useState("");// * this is how you define state in function below
 //   const [genders, setGenders] = useState("");// ? you can only change the state in here only
 //   const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
-//   //TODO : complete the react video
+//   TODO : complete the react video
+// // this is for strike
+//form handling
 //   function getData(e) {
 //     console.log(name,genders,stream);
 //     e.preventDefault();
