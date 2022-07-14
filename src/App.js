@@ -9,17 +9,33 @@ import "./App.css";
 class App extends Component {
    constructor(){
       super();
-      this.state = {
-        data: 'monu'
-      }
-
+      console.log("this is the constructor calling");
+      
    }
-   render() {
-       return(
-        <h1 className="App">Hello there {this.state.data}</h1>
-       )
+   componentDidMount(){
+      console.log("this is componentDidMount calling");
+   }
+   render(){
+      console.log("this is render method calling");
+      return(
+         <h1 className="App">This the render method of class component </h1>
+      )
    }
 }
+// class App extends Component {
+//    constructor(){
+//       super();
+//       this.state = {
+//         data: 'monu'
+//       }
+
+//    }
+//    render() {
+//        return(
+//         <h1 className="App">Hello there {this.state.data}</h1>
+//        )
+//    }
+// }
 // * passing function in child component
 // function App() {
 //   let  sum = (a,b)=>{
