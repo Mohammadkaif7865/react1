@@ -13,7 +13,7 @@ class App extends Component {
       
    }
    componentDidMount(){
-      console.log("this is componentDidMount calling");
+      console.log("this is componentDidMount calling");// ! componentDidMount called in the last of all function 
    }
    render(){
       console.log("this is render method calling");
