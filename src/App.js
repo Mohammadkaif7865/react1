@@ -6,11 +6,24 @@ import React, { Component } from 'react';
 import "./App.css";
 // import Student  from './Students.js';
 // import Student from './Student.js';
+// * componentDiUpdate eg
 class App extends Component {
    constructor(){
       super();
       console.log("this is the constructor calling");
+      this.state = {
+         name: 'Student',
+         count: 0,
+      }
       
+   }
+   shouldComponentUpdate(){
+      console.log('This the component should update function');
+      return this.state.count%2===0;
+      // return true;
+   }
+   componentDidUpdate(preProps,preState,snapshots){
+      console.log(`this is the previous counter : ${preState.count}`);
    }
    componentDidMount(){
       console.log("this is componentDidMount calling");// ! componentDidMount called in the last of all function 
@@ -18,7 +31,12 @@ class App extends Component {
    render(){
       console.log("this is render method calling");
       return(
-         <h1 className="App">This the render method of class component </h1>
+          <div className="App">
+                  {/* <h1 className="App">This the render method of class component of {this.state.name}</h1> */}
+                  {/* <button onClick={()=>this.setState({name:'monu'})}>change</button> */}
+                  <h1 className="App">Count:{this.state.count}</h1>
+                  <button onClick={()=>this.setState({count:this.state.count+1})}>Increase</button>
+          </div>
       )
    }
 }
