@@ -20,13 +20,16 @@ class App extends Component {
    shouldComponentUpdate(){
       console.log('This the component should update function');
       return this.state.count%2===0;
+      // # it is used conditionally display the update 
       // return true;
    }
    componentDidUpdate(preProps,preState,snapshots){
-      console.log(`this is the previous counter : ${preState.count}`);
+      console.log(`this is the previous counter : ${preState.count}`); //! componentDidUpdate called every time when state us change
+      // # it is used to record previous state and props
    }
    componentDidMount(){
-      console.log("this is componentDidMount calling");// ! componentDidMount called in the last of all function 
+      console.log("this is componentDidMount calling");// ! componentDidMount called in the last all the dom loading
+      // # best used case to call api
    }
    render(){
       console.log("this is render method calling");
@@ -70,7 +73,7 @@ class App extends Component {
 //   const [genders, setGenders] = useState("");// ? you can only change the state in here only
 //   const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
 //   TODO : complete the react video
-// // this is for strike
+// - this is for strike
 //form handling
 //   function getData(e) {
 //     console.log(name,genders,stream);
