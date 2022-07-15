@@ -1,39 +1,52 @@
-import React, { useState } from "react";
-import User2 from "./User2";
-// *             ^^^^ this is hook to use state and lifecycle methods in functional component
+import "./App.css";
+import "./Style.css"
+import style from "./custom.module.css"
+// import User2 from "./User2";
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
 // import React, { Component } from "react";
 // import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
-import "./App.css";
+
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # useEffect() with specific state and Props
+// # 3 basic types of css implementation in react js
 function App() {
-  const [data, setData] = useState(1);
-  const [variable, setVariable] = useState(100);
-  return (
-    <div className="App">
-      <h1>This is the example of useEffect with props</h1>
-      <button
-        onClick={() => {
-          setVariable(variable + 1);
-        }}
-      >
-        Change variable
-      </button>
-      <button
-        onClick={() => {
-          setData(data + 1);
-        }}
-      >
-        Change data
-      </button>
-      <User2 data={data} variable={variable}></User2>
-    </div>
-  );
+   return(
+      <div className="App">
+         <h1 className="one">This is method one</h1>
+         <h1 style={{color: 'white',backgroundColor: 'red'}}>This is method two</h1>
+         <h1 className={style.three}>This is method three</h1>
+      </div>
+   )
 }
+// import React, { useState,useEffectS } from "react";
+// *                   ^^^^ this is hook to use state and lifecycle methods in functional component
+// # useEffect() with specific state and Props
+// function App() {
+//   const [data, setData] = useState(1);
+//   const [variable, setVariable] = useState(100);
+//   return (
+//     <div className="App">
+//       <h1>This is the example of useEffect with props</h1>
+//       <button
+//         onClick={() => {
+//           setVariable(variable + 1);
+//         }}
+//       >
+//         Change variable
+//       </button>
+//       <button
+//         onClick={() => {
+//           setData(data + 1);
+//         }}
+//       >
+//         Change data
+//       </button>
+//       <User2 data={data} variable={variable}></User2>
+//     </div>
+//   );
+// }
 // function App() {
 //   const [variable, setVariable] = useState(1);
 //   const [data, setData] = useState(100);
