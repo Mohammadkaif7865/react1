@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-// *             ^^^^ this is hook to use state in functional component
+// *             ^^^^ this is hook to use state and lifecycle methods in functional component
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
 // import React, { Component } from "react";
@@ -8,17 +8,30 @@ import React, { useState,useEffect } from "react";
 import "./App.css";
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # useEffect Hooks in react js
+// # useEffect() with specific state and Props
 function App() {
-   useEffect(() => {
-      console.log("useEffect us being called !!!");
-   })
+   const [variable,setVariable] =useState(1);
    return(
       <div className="App">
-         <h1>useEffect hook</h1>
+         <h1>seEffect with specific state and Props</h1>
+         <h1>{variable}</h1>-
       </div>
    )
 }
+// # useEffect() Hooks in react js
+// function App() {
+//    const [count , setCount] = useState(0);
+//    useEffect(() => {
+//       console.log("useEffect us being called !!!");
+//    })
+//    return(
+//       <div className="App">
+//          <h1>useEffect hook</h1>
+//          <h1>{count}</h1>
+//          <button onClick={()=>{setCount(count+1)}}>Increase</button>
+//       </div>
+//    ) 
+// }
 // # useState Hooks in react js
 // function App() {
 //    const [name,setName] =useState('Monu');
