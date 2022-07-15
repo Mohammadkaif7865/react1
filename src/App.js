@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // *             ^^^^ this is hook to use state and lifecycle methods in functional component
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
@@ -10,13 +10,16 @@ import "./App.css";
 // import Student from './Student.js';
 // # useEffect() with specific state and Props
 function App() {
-   const [variable,setVariable] =useState(1);
-   return(
-      <div className="App">
-         <h1>seEffect with specific state and Props</h1>
-         <h1>{variable}</h1>-
-      </div>
-   )
+  const [variable, setVariable] = useState(1);
+  useEffect(() => {
+    console.log("useEffect us being called !!!");
+  });
+  return (
+    <div className="App">
+      <h1>useEffect with specific state and Props</h1>
+      <h1>{variable}</h1>
+    </div>
+  );
 }
 // # useEffect() Hooks in react js
 // function App() {
@@ -30,7 +33,7 @@ function App() {
 //          <h1>{count}</h1>
 //          <button onClick={()=>{setCount(count+1)}}>Increase</button>
 //       </div>
-//    ) 
+//    )
 // }
 // # useState Hooks in react js
 // function App() {
