@@ -1,36 +1,58 @@
-// import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+// *             ^^^^ this is hook to use state in functional component
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
-import React, { Component } from "react";
-import Child from "./Child";
+// import React, { Component } from "react";
+// import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
 import "./App.css";
 // import Student  from './Students.js';
-// import Student from './Student.js';\
-// # Component will mount example
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      show: true,
-    };
-  }
-  render() {
-    return (
+// import Student from './Student.js';
+// # useEffect Hooks in react js
+function App() {
+   useEffect(() => {
+      console.log("useEffect us being called !!!");
+   })
+   return(
       <div className="App">
-        <h1>Component will unmount</h1>
-        {this.state.show ? <Child></Child> : null}
-        <button
-          onClick={() => {
-            this.setState({ show: !this.state.show });
-          }}
-        >
-          Toggle
-        </button>
+         <h1>useEffect hook</h1>
       </div>
-    );
-  }
+   )
 }
+// # useState Hooks in react js
+// function App() {
+//    const [name,setName] =useState('Monu');
+//    return(
+//       <div className="App">
+//          <h1>{name}</h1>
+//          <button onClick={()=>setName('Sonu')}>Change</button>
+//       </div>
+//    )
+// }
+// # Component will mount example
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       show: true,
+//     };
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>Component will unmount</h1>
+//         {this.state.show ? <Child></Child> : null}
+//         <button
+//           onClick={() => {
+//             this.setState({ show: !this.state.show });
+//           }}
+//         >
+//           Toggle
+//         </button>
+//       </div>
+//     );
+//   }
+// }
 // # componentDiUpdate eg
 // class App extends Component {
 //    constructor(){
