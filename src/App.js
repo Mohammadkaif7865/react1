@@ -1,48 +1,73 @@
 // import React, { useState } from "react";
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
 import "./App.css";
 // import Student  from './Students.js';
-// import Student from './Student.js';
-// * componentDiUpdate eg
+// import Student from './Student.js';\
+// # Component will mount example
 class App extends Component {
-   constructor(){
-      super();
-      console.log("this is the constructor calling");
-      this.state = {
-         name: 'Student',
-         count: 0,
-      }
-      
-   }
-   shouldComponentUpdate(){
-      console.log('This the component should update function');
-      return this.state.count%2===0;
-      // # it is used conditionally display the update 
-      // return true;
-   }
-   componentDidUpdate(preProps,preState,snapshots){
-      console.log(`this is the previous counter : ${preState.count}`); //! componentDidUpdate called every time when state us change
-      // # it is used to record previous state and props
-   }
-   componentDidMount(){
-      console.log("this is componentDidMount calling");// ! componentDidMount called in the last all the dom loading
-      // # best used case to call api
-   }
-   render(){
-      console.log("this is render method calling");
-      return(
-          <div className="App">
-                  {/* <h1 className="App">This the render method of class component of {this.state.name}</h1> */}
-                  {/* <button onClick={()=>this.setState({name:'monu'})}>change</button> */}
-                  <h1 className="App">Count:{this.state.count}</h1>
-                  <button onClick={()=>this.setState({count:this.state.count+1})}>Increase</button>
-          </div>
-      )
-   }
+  constructor() {
+    super();
+    this.state = {
+      show: true,
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Component will unmount</h1>
+        {this.state.show ? <Child></Child> : null}
+        <button
+          onClick={() => {
+            this.setState({ show: !this.state.show });
+          }}
+        >
+          Toggle
+        </button>
+      </div>
+    );
+  }
 }
+// # componentDiUpdate eg
+// class App extends Component {
+//    constructor(){
+//       super();
+//       console.log("this is the constructor calling");
+//       this.state = {
+//          name: 'Student',
+//          count: 0,
+//       }
+
+//    }
+//    shouldComponentUpdate(){
+//       console.log('This the component should update function');
+//       return this.state.count%2===0;
+//       // * it is used conditionally display the update
+//       // return true;
+//    }
+//    componentDidUpdate(preProps,preState,snapshots){
+//       console.log(`this is the previous counter : ${preState.count}`); //! componentDidUpdate called every time when state us change
+//       // * it is used to record previous state and props
+//    }
+//    componentDidMount(){
+//       console.log("this is componentDidMount calling");// ! componentDidMount called in the last all the dom loading
+//       // * best used case to call api
+//    }
+//    render(){
+//       console.log("this is render method calling");
+//       return(
+//           <div className="App">
+//                   {/* <h1 className="App">This the render method of class component of {this.state.name}</h1> */}
+//                   {/* <button onClick={()=>this.setState({name:'monu'})}>change</button> */}
+//                   <h1 className="App">Count:{this.state.count}</h1>
+//                   <button onClick={()=>this.setState({count:this.state.count+1})}>Increase</button>
+//           </div>
+//       )
+//    }
+// }
 // class App extends Component {
 //    constructor(){
 //       super();
@@ -57,7 +82,7 @@ class App extends Component {
 //        )
 //    }
 // }
-// * passing function in child component
+// # passing function in child component
 // function App() {
 //   let  sum = (a,b)=>{
 //      return a+b;
@@ -74,7 +99,7 @@ class App extends Component {
 //   const [stream, setStream] = useState("");// ! class component is going to deprecate sooner
 //   TODO : complete the react video
 // - this is for strike
-//form handling
+// # form handling
 //   function getData(e) {
 //     console.log(name,genders,stream);
 //     e.preventDefault();
@@ -136,7 +161,7 @@ class App extends Component {
 //     </div>
 //   );
 // }
-// //Hide show element in react
+// # Hide show element in react
 // function App() {
 //   let [status,setStatus] = useState(true);
 //   return(
@@ -150,7 +175,7 @@ class App extends Component {
 //     </div>
 //   )
 // }
-//getting input box values
+// # getting input box values
 // function App() {
 //   const [data, setData]  = useState(null);
 //   const [print, setPrint]  = useState(false);
@@ -170,7 +195,7 @@ class App extends Component {
 //     </div>
 //   )
 // }
-// Class component of App.js and passing props with use of Class component
+// # Class component of App.js and passing props with use of Class component
 // class App extends Component {
 //   constructor() {
 //     super();
@@ -189,7 +214,7 @@ class App extends Component {
 //     )
 //   }
 // }
-// Props with functional components
+// # Props with functional components
 // function App() {
 //   const [name,setName] =useState("Monu");
 //   return(
@@ -236,7 +261,7 @@ class App extends Component {
 //     </div>
 //   );
 // }
-//Here we get the example that the variable is not updated in react using function react only understand state and props
+// # Here we get the example that the variable is not updated in react using function react only understand state and props
 // function App() {
 //   let data = "monu";
 //   function changeName () {
@@ -255,6 +280,6 @@ class App extends Component {
 //   )
 // }
 
-//Yes!! we can have component inside a component
+// ! Yes we can have component inside a component
 
 export default App;
