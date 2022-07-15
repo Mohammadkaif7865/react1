@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import User2 from "./User2";
 // *             ^^^^ this is hook to use state and lifecycle methods in functional component
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
@@ -10,17 +11,50 @@ import "./App.css";
 // import Student from './Student.js';
 // # useEffect() with specific state and Props
 function App() {
-  const [variable, setVariable] = useState(1);
-  useEffect(() => {
-    console.log("useEffect us being called !!!");
-  });
+  const [data, setData] = useState(1);
+  const [variable, setVariable] = useState(100);
   return (
     <div className="App">
-      <h1>useEffect with specific state and Props</h1>
-      <h1>{variable}</h1>
+      <h1>This is the example of useEffect with props</h1>
+      <button
+        onClick={() => {
+          setVariable(variable + 1);
+        }}
+      >
+        Change variable
+      </button>
+      <button
+        onClick={() => {
+          setData(data + 1);
+        }}
+      >
+        Change data
+      </button>
+      <User2 data={data} variable={variable}></User2>
     </div>
   );
 }
+// function App() {
+//   const [variable, setVariable] = useState(1);
+//   const [data, setData] = useState(100);
+//   useEffect(() => {
+//     console.log("useEffect us being called for variable");
+//   },[variable]);
+//   useEffect(() => {
+//     console.log("useEffect us being called for data");
+//   },[data]);
+//   return (
+//     <div className="App">
+//       <h1>useEffect with specific state and Props</h1>
+//       <h1>variable :{variable}</h1>
+//       <h1>data :{data}</h1>
+//       <button onClick={()=>{setVariable(variable+1)}}>Change variable</button>
+//       <button onClick={()=>{setData(data+1)}}>Change data</button>
+//     </div>
+//   );
+// }
+// ? Does child component Rerender on parent state change?
+// * Re-rendering of parent component: Whenever the components render function is called, all its subsequent child components will re-render, regardless of whether their props have changed or not.
 // # useEffect() Hooks in react js
 // function App() {
 //    const [count , setCount] = useState(0);
