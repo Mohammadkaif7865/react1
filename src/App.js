@@ -10,7 +10,18 @@ import { Button, Alert } from "react-bootstrap";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # why map not for loop 
+// # using loop with DOM
+function App() {
+  const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
+  return (
+    <div className="App">
+      {names.map((data) => (
+        <h1 key={data}>{data}</h1>
+      ))}
+    </div>
+  );
+}
+// # why map not for loop
 // function App() {
 //    const names=["Daniel","bryan","sam","james","bob","rob"];
 //    let names2=names.map((item)=>item+'khan');//# the main difference between forEach and map function is the map function return a value and forEach doesn't return any value
