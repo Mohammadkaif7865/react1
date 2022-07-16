@@ -1,25 +1,71 @@
 import "./App.css";
-import "./Style.css"
-import style from "./custom.module.css"
+import { Button, Alert } from "react-bootstrap";
+// import "./Style.css"
+// import style from "./custom.module.css";
 // import User2 from "./User2";
 // import Passfun from "./Passfun";
 // import Profile from "./Profile";
 // import React, { Component } from "react";
 // import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
-
 // import Student  from './Students.js';
 // import Student from './Student.js';
+// # why map not for loop 
+// function App() {
+//    const names=["Daniel","bryan","sam","james","bob","rob"];
+//    let names2=names.map((item)=>item+'khan');//# the main difference between forEach and map function is the map function return a value and forEach doesn't return any value
+//    for(let i=0; i<names2.length; i++) {
+//       console.log(`Using for loop my name is : ${names2[i]}`);
+//    }
+//    return(
+//       <div className="App">
+//          <h1>This is the use case of map over for loop </h1>
+//       </div>
+//    )
+// }
+// # React Bootstrap Component (buttons,alert)
+// function App() {
+//   return (
+//     <div className="App">
+//       <Alert variant="danger">
+//         This is the normal alert
+//         {/* 'primary',
+//         'secondary',
+//         'success',
+//         'danger',
+//         'warning',
+//         'info',
+//         'light',
+//         'dark', */}
+//       </Alert>
+//     </div>
+//   );
+// }
+// function App(){
+//    return(
+//       <div className="App">
+//          <h1>Here is the example of react Bootstrap</h1>
+//          <Button variant="primary">Button1</Button>
+//          <Button variant="secondary">Button2</Button>
+//          <Button variant="danger">Button3</Button>
+//          <Button variant="success">Button4</Button>
+//          <Button variant="info">Button5</Button>
+//          <Button variant="warning">Button6</Button>
+//          <Button variant="light">Button7</Button>
+//          <Button variant="dark">Button8</Button>
+//       </div>
+//    )
+// }
 // # 3 basic types of css implementation in react js
-function App() {
-   return(
-      <div className="App">
-         <h1 className="one">This is method one</h1>
-         <h1 style={{color: 'white',backgroundColor: 'red'}}>This is method two</h1>
-         <h1 className={style.three}>This is method three</h1>
-      </div>
-   )
-}
+// function App() {
+//    return(
+//       <div className="App">
+//          <h1 className="one">This is method one</h1>
+//          <h1 style={{color: 'white',backgroundColor: 'red'}}>This is method two</h1>
+//          <h1 className={style.three}>This is method three</h1>
+//       </div>
+//    )
+// }
 // import React, { useState,useEffectS } from "react";
 // *                   ^^^^ this is hook to use state and lifecycle methods in functional component
 // # useEffect() with specific state and Props
