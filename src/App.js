@@ -12,12 +12,26 @@ import { Button, Alert } from "react-bootstrap";
 // import Student from './Student.js';
 // # using loop with DOM
 function App() {
-  const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
+//   const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
+const empData = [
+   { name:'daniel',email:'daniel@gmail.com',phone:'25346345'},
+   { name:'sofia',email:'sofia@gmail.com',phone:'25346345'},
+   { name:'susan',email:'susan@gmail.com',phone:'25346345'}
+];
   return (
     <div className="App">
-      {names.map((data) => (
+      {/* {names.map((data) => (
         <h1 key={data}>{data}</h1>
-      ))}
+      ))} */}
+      <h1>Here i handling complete object</h1>
+      {
+         empData.map((data,i) => <Alert variant="success" className="container" key={i}>
+            <h1 key={data.name}>Name is : {data.name}</h1>
+            <h1 key={data.email}>Email is : {data.email}</h1>
+            <h1 key={data.phone}>Phone is : {data.phone}</h1>
+         </Alert>
+         )
+      }
     </div>
   );
 }
