@@ -1,5 +1,6 @@
 import "./App.css";
-import { Button, Alert } from "react-bootstrap";
+import { Table } from "react-bootstrap";
+// import { Button, Alert } from "react-bootstrap";
 // import "./Style.css"
 // import style from "./custom.module.css";
 // import User2 from "./User2";
@@ -10,31 +11,74 @@ import { Button, Alert } from "react-bootstrap";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # using loop with DOM
+// # Making entries in html table using map function
 function App() {
-//   const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
-const empData = [
-   { name:'daniel',email:'daniel@gmail.com',phone:'25346345'},
-   { name:'sofia',email:'sofia@gmail.com',phone:'25346345'},
-   { name:'susan',email:'susan@gmail.com',phone:'25346345'}
-];
+  const empData = [
+    { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
+    { name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
+    { name: "susan", email: "susan@gmail.com", phone: "22346345" },
+    { name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
+    { name: "olive", email: "olive@gmail.com", phone: "25346745" },
+    { name: "jack", email: "jack@gmail.com", phone: "25386345" },
+    { name: "randy", email: "randy@gmail.com", phone: "25346445" },
+    { name: "joker", email: "joker@gmail.com", phone: "25346385" },
+    { name: "robert", email: "robert@gmail.com", phone: "253436345" },
+    { name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
+    { name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
+    { name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
+    { name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
+    { name: "steve", email: "steve@gmail.com", phone: "25346385" },
+  ];
   return (
     <div className="App">
-      {/* {names.map((data) => (
-        <h1 key={data}>{data}</h1>
-      ))} */}
-      <h1>Here i handling complete object</h1>
-      {
-         empData.map((data,i) => <Alert variant="success" className="container" key={i}>
-            <h1 key={data.name}>Name is : {data.name}</h1>
-            <h1 key={data.email}>Email is : {data.email}</h1>
-            <h1 key={data.phone}>Phone is : {data.phone}</h1>
-         </Alert>
-         )
-      }
+      <h1>List using react Bootstrap</h1>
+      <Table striped hover variant="dark">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+          </tr>
+          {empData.map((item, i) => (
+             
+                item.name[0] === 's'? 
+                <tr key={i}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.phone}</td>
+              </tr>:null
+             
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }
+// # using loop with DOM
+// function App() {
+// //   const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
+// const empData = [
+//    { name:'daniel',email:'daniel@gmail.com',phone:'25346345'},
+//    { name:'sofia',email:'sofia@gmail.com',phone:'25346345'},
+//    { name:'susan',email:'susan@gmail.com',phone:'25346345'}
+// ];
+//   return (
+//     <div className="App">
+//       {/* {names.map((data) => (
+//         <h1 key={data}>{data}</h1>
+//       ))} */}
+//       <h1>Here i handling complete object</h1>
+//       {
+//          empData.map((data,i) => <Alert variant="success" className="container" key={i}>
+//             <h1 key={data.name}>Name is : {data.name}</h1>
+//             <h1 key={data.email}>Email is : {data.email}</h1>
+//             <h1 key={data.phone}>Phone is : {data.phone}</h1>
+//          </Alert>
+//          )
+//       }
+//     </div>
+//   );
+// }
 // # why map not for loop
 // function App() {
 //    const names=["Daniel","bryan","sam","james","bob","rob"];
