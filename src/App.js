@@ -11,49 +11,160 @@ import { Table } from "react-bootstrap";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # Making entries in html table using map function
+// # Making nested entries in html table
 function App() {
   const empData = [
-    { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
-    { name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
-    { name: "susan", email: "susan@gmail.com", phone: "22346345" },
-    { name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
-    { name: "olive", email: "olive@gmail.com", phone: "25346745" },
-    { name: "jack", email: "jack@gmail.com", phone: "25386345" },
-    { name: "randy", email: "randy@gmail.com", phone: "25346445" },
-    { name: "joker", email: "joker@gmail.com", phone: "25346385" },
-    { name: "robert", email: "robert@gmail.com", phone: "253436345" },
-    { name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
-    { name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
-    { name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
-    { name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
-    { name: "steve", email: "steve@gmail.com", phone: "25346385" },
+    {
+      name: "Ronda",
+      email: "ronda@gmail.com",
+      address: [
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+      ],
+    },
+    {
+      name: "Stacy",
+      email: "stacy@gmail.com",
+      address: [
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+      ],
+    },
+    {
+      name: "Steve",
+      email: "ronda@gmail.com",
+      address: [
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+      ],
+    },
+    {
+      name: "willy",
+      email: "willy@gmail.com",
+      address: [
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+      ],
+    },
+    {
+      name: "Eleven",
+      email: "eleven@gmail.com",
+      address: [
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+      ],
+    },
+    {
+      name: "yale",
+      email: "yale@gmail.com",
+      address: [
+        { houseNumber: "32-h", city: "Beijing", country: "China" },
+        { houseNumber: "324-f", city: "Bangkok", country: "Thailand" },
+        { houseNumber: "3-y", city: "Rocky Mountain", country: "USA" },
+        { houseNumber: "r24-f", city: "Kharkiv", country: "Ukraine" },
+        { houseNumber: "3-f", city: "Isle of men", country: "Iceland" },
+        { houseNumber: "32-d", city: "Delhi", country: "India" },
+      ],
+    },
   ];
   return (
     <div className="App">
-      <h1>List using react Bootstrap</h1>
       <Table striped hover variant="dark">
         <tbody>
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Contact</th>
+            <th>Address</th>
           </tr>
           {empData.map((item, i) => (
-             
-                item.name[0] === 's'? 
-                <tr key={i}>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.phone}</td>
-              </tr>:null
-             
+            <tr>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>
+                <Table striped hover variant="dark">
+                  <tr>
+                    <th>House Number</th>
+                    <th>City</th>
+                    <th>Country</th>
+                  </tr>
+                  {item.address.map((add) => (
+                    <tr>
+                      <td>{add.houseNumber}</td>
+                      <td>{add.city}</td>
+                      <td>{add.country}</td>
+                    </tr>
+                  ))}
+                </Table>
+              </td>
+            </tr>
           ))}
         </tbody>
       </Table>
     </div>
   );
 }
+// # Making entries in html table using map function
+// function App() {
+//   const empData = [
+//     { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
+//     { name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
+//     { name: "susan", email: "susan@gmail.com", phone: "22346345" },
+//     { name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
+//     { name: "olive", email: "olive@gmail.com", phone: "25346745" },
+//     { name: "jack", email: "jack@gmail.com", phone: "25386345" },
+//     { name: "randy", email: "randy@gmail.com", phone: "25346445" },
+//     { name: "joker", email: "joker@gmail.com", phone: "25346385" },
+//     { name: "robert", email: "robert@gmail.com", phone: "253436345" },
+//     { name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
+//     { name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
+//     { name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
+//     { name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
+//     { name: "steve", email: "steve@gmail.com", phone: "25346385" },
+//   ];
+//   return (
+//     <div className="App">
+//       <h1>List using react Bootstrap</h1>
+//       <Table striped hover variant="dark">
+//         <tbody>
+//           <tr>
+//             <th>Name</th>
+//             <th>Email</th>
+//             <th>Contact</th>
+//           </tr>
+//           {empData.map((item, i) =>
+//             item.name[0] === "s" ? (
+//               <tr key={i}>
+//                 <td>{item.name}</td>
+//                 <td>{item.email}</td>
+//                 <td>{item.phone}</td>
+//               </tr>
+//             ) : null
+//           )}
+//         </tbody>
+//       </Table>
+//     </div>
+//   );
+// }
 // # using loop with DOM
 // function App() {
 // //   const names = ["Daniel", "bryan", "sam", "james", "bob", "rob"];
