@@ -90,30 +90,36 @@ function App() {
   return (
     <div className="App">
       <Table striped hover variant="dark">
-        <tbody>
+        <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Address</th>
           </tr>
+        </thead>
+        <tbody>
           {empData.map((item, i) => (
             <tr>
               <td>{item.name}</td>
               <td>{item.email}</td>
               <td>
-                <Table striped hover variant="dark">
-                  <tr>
-                    <th>House Number</th>
-                    <th>City</th>
-                    <th>Country</th>
-                  </tr>
-                  {item.address.map((add) => (
+                <Table striped hover variant="info">
+                  <thead>
                     <tr>
-                      <td>{add.houseNumber}</td>
-                      <td>{add.city}</td>
-                      <td>{add.country}</td>
+                      <th>House Number</th>
+                      <th>City</th>
+                      <th>Country</th>
                     </tr>
-                  ))}
+                  </thead>
+                  <tbody>
+                    {item.address.map((add, j) => (
+                      <tr key={j}>
+                        <td>{add.houseNumber}</td>
+                        <td>{add.city}</td>
+                        <td>{add.country}</td>
+                      </tr>
+                    ))}
+                  </tbody>
                 </Table>
               </td>
             </tr>
