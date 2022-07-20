@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import Child from "./Children"
 // import { Table } from "react-bootstrap";
 // import Customer from "./Customer";
 // import { Button, Alert } from "react-bootstrap";
@@ -13,29 +14,42 @@ import React from "react";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # react fragments
+// # lifting state up
+// # Its nothing but passing the function as a props and in child component data of child component is passed as parameter to the function and that's how data is transferred from child component to parent component 
 function App() {
-  return (
-    // # This is the most preferred
+  function show(data) {
+      console.log(data);
+  }
+  return(
     <>
-      <h1>This is node one</h1>
-      <h1>This is node three</h1>
-      <h1>This is node two</h1>
+      <h1>This is App component</h1>
+      <Child show={show}></Child>
     </>
-    // import React from "react";
-    // <React.Fragment>
-    //   <h1>This is node one</h1>
-    //   <h1>This is node three</h1>
-    //   <h1>This is node two</h1>
-    // </React.Fragment>
-    // import React,{Fragment} from "react";
-    // <Fragment>
-    //   <h1>This is node one</h1>
-    //   <h1>This is node three</h1>
-    //   <h1>This is node two</h1>
-    // </Fragment>
-  );
+  )
 }
+// # react fragments
+// function App() {
+//   return (
+//     // # This is the most preferred
+//     <>
+//       <h1>This is node one</h1>
+//       <h1>This is node three</h1>
+//       <h1>This is node two</h1>
+//     </>
+//     // import React from "react";
+//     // <React.Fragment>
+//     //   <h1>This is node one</h1>
+//     //   <h1>This is node three</h1>
+//     //   <h1>This is node two</h1>
+//     // </React.Fragment>
+//     // import React,{Fragment} from "react";
+//     // <Fragment>
+//     //   <h1>This is node one</h1>
+//     //   <h1>This is node three</h1>
+//     //   <h1>This is node two</h1>
+//     // </Fragment>
+//   );
+// }
 // # reusing component in map function
 // function App() {
 //   const empData = [
