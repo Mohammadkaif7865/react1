@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <h1>Reuse component with list</h1>
       {empData.map((item, i) => (
-        <Customer name={item.name}></Customer>
+        <Customer data={item}></Customer>
       ))}
     </div>
   );
