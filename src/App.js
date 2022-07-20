@@ -1,6 +1,7 @@
 import "./App.css";
-import { Table } from "react-bootstrap";
-import Customer from "./Customer";
+import React from "react";
+// import { Table } from "react-bootstrap";
+// import Customer from "./Customer";
 // import { Button, Alert } from "react-bootstrap";
 // import "./Style.css"
 // import style from "./custom.module.css";
@@ -12,33 +13,56 @@ import Customer from "./Customer";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # reusing component in map function
+// # react fragments
 function App() {
-  const empData = [
-    { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
-    { name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
-    { name: "susan", email: "susan@gmail.com", phone: "22346345" },
-    { name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
-    { name: "olive", email: "olive@gmail.com", phone: "25346745" },
-    { name: "jack", email: "jack@gmail.com", phone: "25386345" },
-    { name: "randy", email: "randy@gmail.com", phone: "25346445" },
-    { name: "joker", email: "joker@gmail.com", phone: "25346385" },
-    { name: "robert", email: "robert@gmail.com", phone: "253436345" },
-    { name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
-    { name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
-    { name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
-    { name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
-    { name: "steve", email: "steve@gmail.com", phone: "25346385" },
-  ];
   return (
-    <div className="App">
-      <h1>Reuse component with list</h1>
-      {empData.map((item, i) => (
-        <Customer data={item}></Customer>
-      ))}
-    </div>
+    // # This is the most preferred
+    <>
+      <h1>This is node one</h1>
+      <h1>This is node three</h1>
+      <h1>This is node two</h1>
+    </>
+    // import React from "react";
+    // <React.Fragment>
+    //   <h1>This is node one</h1>
+    //   <h1>This is node three</h1>
+    //   <h1>This is node two</h1>
+    // </React.Fragment>
+    // import React,{Fragment} from "react";
+    // <Fragment>
+    //   <h1>This is node one</h1>
+    //   <h1>This is node three</h1>
+    //   <h1>This is node two</h1>
+    // </Fragment>
   );
 }
+// # reusing component in map function
+// function App() {
+//   const empData = [
+//     { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
+//     { name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
+//     { name: "susan", email: "susan@gmail.com", phone: "22346345" },
+//     { name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
+//     { name: "olive", email: "olive@gmail.com", phone: "25346745" },
+//     { name: "jack", email: "jack@gmail.com", phone: "25386345" },
+//     { name: "randy", email: "randy@gmail.com", phone: "25346445" },
+//     { name: "joker", email: "joker@gmail.com", phone: "25346385" },
+//     { name: "robert", email: "robert@gmail.com", phone: "253436345" },
+//     { name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
+//     { name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
+//     { name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
+//     { name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
+//     { name: "steve", email: "steve@gmail.com", phone: "25346385" },
+//   ];
+//   return (
+//     <div className="App">
+//       <h1>Reuse component with list</h1>
+//       {empData.map((item, i) => (
+//         <Customer data={item}></Customer>
+//       ))}
+//     </div>
+//   );
+// }
 // # Making nested entries in html table
 // function App() {
 //   const empData = [
