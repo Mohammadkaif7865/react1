@@ -92,6 +92,7 @@ function App() {
       <Table striped hover variant="dark">
         <thead>
           <tr>
+            <th>S.No</th>
             <th>Name</th>
             <th>Email</th>
             <th>Address</th>
@@ -99,11 +100,12 @@ function App() {
         </thead>
         <tbody>
           {empData.map((item, i) => (
-            <tr>
+            <tr key={i}>
+              <td>{i+1}</td>
               <td>{item.name}</td>
               <td>{item.email}</td>
               <td>
-                <Table striped hover variant="info">
+                <Table striped hover variant="dark">
                   <thead>
                     <tr>
                       <th>House Number</th>
