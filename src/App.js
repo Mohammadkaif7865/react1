@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { PureComponent } from "react";
-import Child from "./Children";
+import Son from "./Son";
+// import Child from "./Children";
 // import { Table } from "react-bootstrap";
 // import Customer from "./Customer";
 // import { Button, Alert } from "react-bootstrap";
@@ -26,8 +27,9 @@ class App extends PureComponent {
     console.log("rendering");
     return (
       <div className="App">
-        <h1>This is pure component example {this.state.count}</h1>
-        <button onClick={() => this.setState({ count:this.state.count+1 })}>
+        {/* <h1>This is pure component example {this.state.count}</h1> */}
+        <Son count={this.state.count}></Son>
+        <button onClick={() => this.setState({ count: this.state.count })}>
           Add
         </button>
       </div>
