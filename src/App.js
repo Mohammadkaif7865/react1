@@ -1,6 +1,6 @@
 import "./App.css";
-import React from "react";
-import Child from "./Children"
+import React, { PureComponent } from "react";
+import Child from "./Children";
 // import { Table } from "react-bootstrap";
 // import Customer from "./Customer";
 // import { Button, Alert } from "react-bootstrap";
@@ -13,20 +13,41 @@ import Child from "./Children"
 // import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
-// import Student from './Student.js';
-// # lifting state up
-// # Its nothing but passing the function as a props and in child component data of child component is passed as parameter to the function and that's how data is transferred from child component to parent component 
-function App() {
-  function show(data) {
-      console.log(data);
+// import Student from './Student.js';\
+// # pure component
+class App extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      count: 1,
+    };
   }
-  return(
-    <>
-      <h1>This is App component</h1>
-      <Child show={show}></Child>
-    </>
-  )
+  render() {
+    console.log("rendering");
+    return (
+      <div className="App">
+        <h1>This is pure component example {this.state.count}</h1>
+        <button onClick={() => this.setState({ count:this.state.count+1 })}>
+          Add
+        </button>
+      </div>
+    );
+  }
+  // # its good to re-render the dom on the change of state but is not good to render the dom even if a event doesn't even cause any change in state of the component
 }
+// # lifting state up
+// # Its nothing but passing the function as a props and in child component data of child component is passed as parameter to the function and that's how data is transferred from child component to parent component
+// function App() {
+//   function show(data) {
+//       console.log(data);
+//   }
+//   return(
+//     <>
+//       <h1>This is App component</h1>
+//       <Child show={show}></Child>
+//     </>
+//   )
+// }
 // # react fragments
 // function App() {
 //   return (
