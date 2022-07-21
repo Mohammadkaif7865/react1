@@ -1,7 +1,8 @@
 import "./App.css";
-import React, { PureComponent } from "react";
-import Son from "./Son";
-// import Child from "./Children";
+import React, { useMemo, useState, useEffect } from "react";
+// import React, { PureComponent } from "react";
+// import Son from "./Son";
+// // import Child from "./Children";
 // import { Table } from "react-bootstrap";
 // import Customer from "./Customer";
 // import { Button, Alert } from "react-bootstrap";
@@ -14,29 +15,49 @@ import Son from "./Son";
 // import Child from "./Child";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
-// import Student from './Student.js';\
-// # pure component
-class App extends PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      count: 1,
-    };
-  }
-  render() {
-    console.log("rendering");
-    return (
-      <div className="App">
-        {/* <h1>This is pure component example {this.state.count}</h1> */}
-        <Son count={this.state.count}></Son>
-        <button onClick={() => this.setState({ count: this.state.count })}>
-          Add
-        </button>
-      </div>
-    );
-  }
-  // # its good to re-render the dom on the change of state but is not good to render the dom even if a event doesn't even cause any change in state of the component
+// import Student from './Student.js';
+// # using PureComponent in functional component by hook useMemo
+function App() {
+  useEffect(() => {
+    console.log("some thing has been changed");
+  });
+  // # useEffect(() =>{},[]); work same as component did mount 
+  // # useEffect(() =>{}); work same as component did update 
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState(10);
+  return (
+    <div className="App">
+      <h1>Here we are using useMemo Hook</h1>
+      <h2>Count :{count}</h2>
+      <h2>Data : {data}</h2>
+      <button onClick={() => setCount(count)}>Data</button>
+      <button onClick={() => setData(data + 10)}>Count</button>
+    </div>
+  );
 }
+// # pure component
+// # its available in react for class component , you can use this feature in function component using hooks (useMemo)
+// class App extends PureComponent {
+//   constructor() {
+//     super();
+//     this.state = {
+//       count: 1,
+//     };
+//   }
+//   render() {
+//     console.log("rendering");
+//     return (
+//       <div className="App">
+//         {/* <h1>This is pure component example {this.state.count}</h1> */}
+//         <Son count={this.state.count}></Son>
+//         <button onClick={() => this.setState({ count: this.state.count })}>
+//           Add
+//         </button>
+//       </div>
+//     );
+//   }
+//   // # its good to re-render the dom on the change of state but is not good to render the dom even if a event doesn't even cause any change in state of the component
+// }
 // # lifting state up
 // # Its nothing but passing the function as a props and in child component data of child component is passed as parameter to the function and that's how data is transferred from child component to parent component
 // function App() {
@@ -439,7 +460,7 @@ class App extends PureComponent {
 //     );
 //   }
 // }
-// # componentDiUpdate eg
+// # componentDidUpdate eg
 // class App extends Component {
 //    constructor(){
 //       super();
@@ -462,7 +483,7 @@ class App extends PureComponent {
 //    }
 //    componentDidMount(){
 //       console.log("this is componentDidMount calling");// ! componentDidMount called in the last all the dom loading
-//       // * best used case to call api
+//       // * best used case is to call api
 //    }
 //    render(){
 //       console.log("this is render method calling");
