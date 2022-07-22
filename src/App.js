@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 // import React, { PureComponent } from "react";
 // import Son from "./Son";
 // // import Child from "./Children";
@@ -18,20 +18,31 @@ import React, { useMemo, useState, useEffect } from "react";
 // import Student from './Student.js';
 // # using PureComponent in functional component by hook useMemo
 function App() {
-  useEffect(() => {
-    console.log("some thing has been changed");
-  });
-  // # useEffect(() =>{},[]); work same as component did mount 
-  // # useEffect(() =>{}); work same as component did update 
+  // useEffect(() => {
+  //   console.log("something has been changed");
+  // });
+  // # useEffect(() =>{},[]); work same as component did mount
+  // # useEffect(() =>{}); work same as component did update
+  // # useEffect(() =>{},[state or props]); work same as should component update
   const [count, setCount] = useState(1);
   const [data, setData] = useState(10);
+
+  // # use memo is used to call a particular function on the change of particular state
+  const countMultipleMemo = useMemo(
+    function countMultiple() {
+      console.log("count multiple memo");
+      return count * 10;
+    },
+    [count]
+  );
   return (
     <div className="App">
       <h1>Here we are using useMemo Hook</h1>
       <h2>Count :{count}</h2>
       <h2>Data : {data}</h2>
-      <button onClick={() => setCount(count)}>Data</button>
-      <button onClick={() => setData(data + 10)}>Count</button>
+      <h2>{countMultipleMemo}</h2>
+      <button onClick={() => setData(data + 10)}>Data</button>
+      <button onClick={() => setCount(count + 1)}>Count</button>
     </div>
   );
 }
