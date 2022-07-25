@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { Component} from "react";
+import React, { Component, createRef } from "react";
+import { getValue } from "@testing-library/user-event/dist/utils";
 // import React, { useMemo, useState } from "react";
 // import React, { PureComponent } from "react";
 // import Son from "./Son";
@@ -18,6 +19,26 @@ import React, { Component} from "react";
 // import Student  from './Students.js';
 // import Student from './Student.js';
 // # Ref in react
+class App extends Component {
+  constructor() {
+    super();
+    this.inputRef = createRef();
+  }
+  getVal() {
+    console.log(this.inputRef);
+    console.log(this.inputRef.current.value);
+    this.inputRef.current.style.color = "red";
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>This is for ref</h1>
+        <input type="text" ref={this.inputRef} />
+        <button onClick={this.getVal}>Use ref</button>
+      </div>
+    );
+  }
+}
 // # using PureComponent in functional component by hook useMemo
 // function App() {
 //   // useEffect(() => {
