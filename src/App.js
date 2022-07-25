@@ -33,8 +33,8 @@ function App() {
 // ? what is that ? still don't know
 // - strike
 // todo list
-// * something is incomplete here
 // => Normal information
+// * something is incomplete here
 // # Headings
 // # forwardRef in react js
 // function App() {
