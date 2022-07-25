@@ -1,33 +1,28 @@
 import "./App.css";
-import React, { useRef } from "react";
-import User1 from "./ChildFor";
-// import React, { Component, createRef } from "react";
-// import React, { useMemo, useState } from "react";
-// import React, { PureComponent } from "react";
-// import Son from "./Son";
-// // import Child from "./Children";
-// import { Table } from "react-bootstrap";
-// import Customer from "./Customer";
-// import { Button, Alert } from "react-bootstrap";
-// import "./Style.css"
-// import style from "./custom.module.css";
-// import User2 from "./User2";
-// import Passfun from "./Passfun";
-// import Profile from "./Profile";
 // import React, { Component } from "react";
-// import Child from "./Child";
-// import Junk from './Junk.js';  How to import component in react
-// import Student  from './Students.js';
-// import Student from './Student.js';
+// # Uncontrolled component
+function App() {
+  return (
+    <div className="App">
+      <h1>Here is the example of control component</h1>
+    </div>
+  );
+}
 // # Control component in react js
 // => The component which control with the state is called control component
-function App() {
-    return(
-        <div className="App">
-            <h1>Here is the example of control component</h1>
-        </div>
-    )
-}
+// import React, { useState } from "react";
+// function App() {
+//   let [val, setVal] = useState(0);
+//   let [item, setItem] = useState(0);
+//   return (
+//     <div className="App">
+//       <h1>Here is the example of control component</h1>
+//       <input type="text" value={val} onChange={(e) => setVal(e.target.value)} />
+//       <input type="text" value={item} onChange={(e) => setItem(e.target.value)} />
+//       <h1>{val},{item}</h1>
+//     </div>
+//   );
+// }
 // normal code comment
 // ! Something is wrong here please be aware
 // ? what is that ? still don't know
@@ -37,6 +32,8 @@ function App() {
 // * something is incomplete here
 // # Headings
 // # forwardRef in react js
+// import React, { useRef } from "react";
+// import User1 from "./ChildFor";
 // function App() {
 //   let inputRef = useRef(null);
 //   function updateInput() {
@@ -68,6 +65,7 @@ function App() {
 //   );
 // }
 // # Ref in react (in class component)
+// import React, { Component, createRef } from "react";
 // class App extends Component {
 //   constructor() {
 //     super();
@@ -89,6 +87,7 @@ function App() {
 //   }
 // }
 // # using PureComponent in functional component by hook useMemo
+// import React, { useMemo, useState } from "react";
 // function App() {
 //   // useEffect(() => {
 //   //   console.log("something has been changed");
@@ -120,6 +119,8 @@ function App() {
 // }
 // # pure component
 // # its available in react for class component , you can use this feature in function component using hooks (useMemo)
+// import Son from "./Son";
+// import React, { PureComponent } from "react";
 // class App extends PureComponent {
 //   constructor() {
 //     super();
@@ -143,6 +144,7 @@ function App() {
 // }
 // # lifting state up
 // # Its nothing but passing the function as a props and in child component data of child component is passed as parameter to the function and that's how data is transferred from child component to parent component
+// import Child from "./Children";
 // function App() {
 //   function show(data) {
 //       console.log(data);
@@ -178,6 +180,7 @@ function App() {
 //   );
 // }
 // # reusing component in map function
+// import Customer from "./Customer";
 // function App() {
 //   const empData = [
 //     { name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
@@ -205,6 +208,7 @@ function App() {
 //   );
 // }
 // # Making nested entries in html table
+// import { Table } from "react-bootstrap";
 // function App() {
 //   const empData = [
 //     {
@@ -405,6 +409,7 @@ function App() {
 //    )
 // }
 // # React Bootstrap Component (buttons,alert)
+// import { Button, Alert } from "react-bootstrap";
 // function App() {
 //   return (
 //     <div className="App">
@@ -438,6 +443,8 @@ function App() {
 //    )
 // }
 // # 3 basic types of css implementation in react js
+// import "./Style.css"
+// import style from "./custom.module.css";
 // function App() {
 //    return(
 //       <div className="App">
@@ -447,6 +454,7 @@ function App() {
 //       </div>
 //    )
 // }
+// import User2 from "./User2";
 // import React, { useState,useEffectS } from "react";
 // *                   ^^^^ this is hook to use state and lifecycle methods in functional component
 // # useEffect() with specific state and Props
@@ -520,6 +528,7 @@ function App() {
 //    )
 // }
 // # Component will mount example
+// import Child from "./Child";
 // class App extends Component {
 //   constructor() {
 //     super();
@@ -595,6 +604,7 @@ function App() {
 //    }
 // }
 // # passing function in child component
+// import Passfun from "./Passfun";
 // function App() {
 //   let  sum = (a,b)=>{
 //      return a+b;
@@ -708,6 +718,8 @@ function App() {
 //   )
 // }
 // # Class component of App.js and passing props with use of Class component
+// import Student  from './Students.js';
+// import Student from './Student.js';
 // class App extends Component {
 //   constructor() {
 //     super();
