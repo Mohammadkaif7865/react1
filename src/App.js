@@ -1,6 +1,7 @@
 import "./App.css";
-import React, { Component, createRef } from "react";
-import { getValue } from "@testing-library/user-event/dist/utils";
+import React, { useRef } from "react";
+import User1 from "./ChildFor";
+// import React, { Component, createRef } from "react";
 // import React, { useMemo, useState } from "react";
 // import React, { PureComponent } from "react";
 // import Son from "./Son";
@@ -18,27 +19,58 @@ import { getValue } from "@testing-library/user-event/dist/utils";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # Ref in react
-class App extends Component {
-  constructor() {
-    super();
-    this.inputRef = createRef();
+// # forwardRef in react js
+function App() {
+  let inputRef = useRef(null);
+  function updateInput() {
+    console.log(inputRef.current.value);
+    inputRef.current.style.color = "red";
+    inputRef.current.focus();
   }
-  getVal() {
-    console.log(this.inputRef);
-    console.log(this.inputRef.current.value);
-    this.inputRef.current.style.color = "red";
-  }
-  render() {
-    return (
-      <div className="App">
-        <h1>This is for ref</h1>
-        <input type="text" ref={this.inputRef} />
-        <button onClick={this.getVal}>Use ref</button>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <h1>This is forwardRef in react ja</h1>
+      <User1 ref={inputRef}></User1>
+      <button onClick={() => updateInput()}>Update input</button>
+    </div>
+  );
 }
+// # useRef for functional component
+// function App() {
+//   let inputRef = useRef(null);
+//   function handleChange() {
+//     inputRef.current.value = "100";
+//     inputRef.current.focus();
+//   }
+//   return (
+//     <div className="App">
+//       <h1>This is useRef for functional component</h1>
+//       <input type="text" ref={inputRef} />
+//       <button onClick={() => handleChange()}>UseRef</button>
+//     </div>
+//   );
+// }
+// # Ref in react (in class component)
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.inputRef = createRef();
+//   }
+//   getVal() {
+//     console.log(this.inputRef);
+//     console.log(this.inputRef.current.value);
+//     this.inputRef.current.style.color = "red";
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>This is for ref</h1>
+//         <input type="text" ref={this.inputRef} />
+//         <button onClick={()=>this.getVal()}>Use ref</button>
+//       </div>
+//     );
+//   }
+// }
 // # using PureComponent in functional component by hook useMemo
 // function App() {
 //   // useEffect(() => {
