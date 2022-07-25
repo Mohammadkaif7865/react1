@@ -19,22 +19,39 @@ import User1 from "./ChildFor";
 // import Junk from './Junk.js';  How to import component in react
 // import Student  from './Students.js';
 // import Student from './Student.js';
-// # forwardRef in react js
+// # Control component in react js
+// => The component which control with the state is called control component
 function App() {
-  let inputRef = useRef(null);
-  function updateInput() {
-    console.log(inputRef.current.value);
-    inputRef.current.style.color = "red";
-    inputRef.current.focus();
-  }
-  return (
-    <div className="App">
-      <h1>This is forwardRef in react ja</h1>
-      <User1 ref={inputRef}></User1>
-      <button onClick={() => updateInput()}>Update input</button>
-    </div>
-  );
+    return(
+        <div className="App">
+            <h1>Here is the example of control component</h1>
+        </div>
+    )
 }
+// normal code comment
+// ! Something is wrong here please be aware
+// ? what is that ? still don't know
+// - strike
+// todo list
+// * something is incomplete here
+// => Normal information
+// # Headings
+// # forwardRef in react js
+// function App() {
+//   let inputRef = useRef(null);
+//   function updateInput() {
+//     console.log(inputRef.current.value);
+//     inputRef.current.style.color = "red";
+//     inputRef.current.focus();
+//   }
+//   return (
+//     <div className="App">
+//       <h1>This is forwardRef in react ja</h1>
+//       <User1 ref={inputRef}></User1>
+//       <button onClick={() => updateInput()}>Update input</button>
+//     </div>
+//   );
+// }
 // # useRef for functional component
 // function App() {
 //   let inputRef = useRef(null);
