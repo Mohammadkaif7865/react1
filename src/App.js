@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>Here is the example of control component</h1>
+      <h1>Here is the example of Uncontrolled component</h1>
     </div>
   );
 }
