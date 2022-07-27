@@ -1,10 +1,29 @@
 import "./App.css";
+import React, { useRef, useState } from "react";
 // import React, { Component } from "react";
 // # Uncontrolled component
 function App() {
+  let inputRef = useRef(null);
+  let [val, setVal] = useState("");
+  let inputRef2 = useRef(null);
+  function submitForm(e) {
+    e.preventDefault();
+    let val4 = document.getElementById("input4").value;
+    console.log(inputRef.current.value);
+    console.log(inputRef2.current.value);
+    console.log(val);
+    console.log(val4);
+  }
   return (
     <div className="App">
       <h1>Here is the example of Uncontrolled component</h1>
+      <form onSubmit={submitForm}>
+        <input type="text" ref={inputRef} /> <br />
+        <input type="text" ref={inputRef2} /> <br />
+        <input type="text" onChange={(e) => setVal(e.target.value)} /> <br />
+        <input id="input4" type="text"  required/> <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
