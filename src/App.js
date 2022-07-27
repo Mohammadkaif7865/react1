@@ -1,4 +1,40 @@
 import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+// # React Router
+// ! In react v6 For route you have to put all the route in the Routes tag 
+// * This is the new syntax <Route path="/Home" element={<Home/>} />
+function App() {
+  return (
+    <div className="App">
+        <h1>This is the example of Routes</h1>
+      <Router>
+        <Link to="/">Home Page</Link> <br />
+        <Link to="/about">About Page</Link>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+        </Routes>
+      </Router>
+    </div>
+  );
+}
+function Home() {
+  return (
+    <div>
+      <h1>Home page</h1>
+      <p>This is the home page of the application.</p>
+    </div>
+  );
+}
+function About() {
+  return (
+    <div>
+      <h1>About page</h1>
+      <p>This is the about page of the application.</p>
+    </div>
+  );
+}
 // import React, { Component } from "react";
 // # HOC (higher order component)
 // => Passing component in another component as a props is called higher order component
