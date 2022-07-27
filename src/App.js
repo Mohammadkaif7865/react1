@@ -1,41 +1,41 @@
 import "./App.css";
-import React, { useState } from "react";
 // import React, { Component } from "react";
 // # HOC (higher order component)
 // => Passing component in another component as a props is called higher order component
 // ! You can't give h1 tag inside of p tag
-function App() {
-  return (
-    <div className="App">
-      <h1>This is the example of higher order component </h1>
-      <HocFunction counter={Counter} />
-    </div>
-  );
-}
-function Counter(props) {
-  let [count, setCount] = useState(0);
-  return (
-    <>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>Update</button>
-    </>
-  );
-}
-function HocFunction(props) {
-  return (
-    <>
-      <div style={{ backgroundColor: "red", width: "100%" }}>
-        <props.counter />
-      </div>
-      <div style={{ backgroundColor: "green", width: "100%" }}>
-        <props.counter />
-      </div>
-      <div style={{ backgroundColor: "blue", width: "100%" }}>
-        <props.counter />
-      </div>
-    </>
-  );
-}
+// import React, { useState } from "react";
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>This is the example of higher order component </h1>
+//       <HocFunction counter={Counter} />
+//     </div>
+//   );
+// }
+// function Counter(props) {
+//   let [count, setCount] = useState(0);
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={() => setCount(count + 1)}>Update</button>
+//     </>
+//   );
+// }
+// function HocFunction(props) {
+//   return (
+//     <>
+//       <div style={{ backgroundColor: "red", width: "100%" }}>
+//         <props.counter />
+//       </div>
+//       <div style={{ backgroundColor: "green", width: "100%" }}>
+//         <props.counter />
+//       </div>
+//       <div style={{ backgroundColor: "blue", width: "100%" }}>
+//         <props.counter />
+//       </div>
+//     </>
+//   );
+// }
 // # Uncontrolled component
 // import React, { useRef, useState } from "react";
 // => In controlled component form is handled by react state.
