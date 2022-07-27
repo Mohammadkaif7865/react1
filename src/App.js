@@ -1,32 +1,81 @@
 import "./App.css";
-import React, { useRef, useState } from "react";
 // import React, { Component } from "react";
 // # Uncontrolled component
-function App() {
-  let inputRef = useRef(null);
-  let [val, setVal] = useState("");
-  let inputRef2 = useRef(null);
-  function submitForm(e) {
-    e.preventDefault();
-    let val4 = document.getElementById("input4").value;
-    console.log(inputRef.current.value);
-    console.log(inputRef2.current.value);
-    console.log(val);
-    console.log(val4);
-  }
-  return (
-    <div className="App">
-      <h1>Here is the example of Uncontrolled component</h1>
-      <form onSubmit={submitForm}>
-        <input type="text" ref={inputRef} /> <br />
-        <input type="text" ref={inputRef2} /> <br />
-        <input type="text" onChange={(e) => setVal(e.target.value)} /> <br />
-        <input id="input4" type="text"  required/> <br />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+// import React, { useRef, useState } from "react";
+// => In controlled component form is handled by react state.
+// => but in uncontrolled component form is handled by react dom or ref
+// function App() {
+//   let inputRef = useRef(null);
+//   let [val, setVal] = useState("");
+//   let inputRef2 = useRef(null);
+//   function submitForm(e) {
+//     e.preventDefault();
+//     let val4 = document.getElementById("exampleCheck2").value;
+//     console.log(inputRef.current.value);
+//     console.log(inputRef2.current.value);
+//     console.log(val);
+//     console.log(val4);
+//   }
+//   return (
+//     <div className="container">
+//       <h1>Here is the example of Uncontrolled component</h1>
+//       <form  onSubmit={submitForm}>
+//         <div className="mb-3">
+//           <label for="exampleInputEmail1" className="form-label">
+//             Email address
+//           </label>
+//           <input
+//             type="email"
+//             className="form-control"
+//             id="exampleInputEmail1"
+//             aria-describedby="emailHelp"
+//             ref={inputRef}
+//           />
+//           <div id="emailHelp" className="form-text">
+//             We'll never share your email with anyone else.
+//           </div>
+//         </div>
+//         <div className="mb-3">
+//           <label for="exampleInputPassword1" className="form-label">
+//             Password
+//           </label>
+//           <input
+//             type="password"
+//             className="form-control"
+//             id="exampleInputPassword1"
+//             ref={inputRef2}
+//           />
+//         </div>
+//         <div className="mb-3 form-check">
+//           <input
+//             type="checkbox"
+//             className="form-check-input"
+//             id="exampleCheck1"
+//             value="CS"
+//             onChange={(e) => setVal(e.target.value)} 
+//           />
+//           <label className="form-check-label" for="exampleCheck1">
+//            CS
+//           </label>
+//         </div>
+//         <div className="mb-3 form-check">
+//           <input
+//             type="checkbox"
+//             className="form-check-input"
+//             id="exampleCheck2"
+//             value="B-Tech"
+//           />
+//           <label className="form-check-label" for="exampleCheck2">
+//             B-Tech
+//           </label>
+//         </div>
+//         <button type="submit" className="btn btn-primary">
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// }
 // # Control component in react js
 // => The component which control with the state is called control component
 // import React, { useState } from "react";
