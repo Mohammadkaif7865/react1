@@ -3,19 +3,23 @@ import React from "react";
 import Nav from "./Nav";
 import Home from "./Home";
 import About from "./About";
-import {  Route, Routes } from "react-router-dom";
+import PageNotExist from "./PageNotExist";
+import { Route, Routes } from "react-router-dom";
 // # React Router
 // ! In react v6 For route you have to put all the route in the Routes tag
 // ! I have been through this same issue, the new React-Router doesn't support the exact keyword. You can simply remove it from the <Route .../> and it will work just fine.
+// ! In addition to the answers, it should be noted that starting from react-router-dom v6, <Switch /> has been replaced by <Routes />.
+// * You can't use anchor tag replacing Link because it will reload the whole web page which will not the property of react. 
 // * This is the new syntax <Route path="/Home" element={<Home/>} />
 function App() {
   return (
     <div className="App">
       <h1>This is the example of Routes</h1>
-      <Nav/>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<PageNotExist />} />
       </Routes>
     </div>
   );
