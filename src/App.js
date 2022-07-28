@@ -1,24 +1,49 @@
 import "./App.css";
 import React from "react";
 import Nav from "./Nav";
+import User from "./User";
 import Home from "./Home";
 import About from "./About";
 import PageNotExist from "./PageNotExist";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 // # React Router
 // ! In react v6 For route you have to put all the route in the Routes tag
 // ! I have been through this same issue, the new React-Router doesn't support the exact keyword. You can simply remove it from the <Route .../> and it will work just fine.
 // ! In addition to the answers, it should be noted that starting from react-router-dom v6, <Switch /> has been replaced by <Routes />.
-// * You can't use anchor tag replacing Link because it will reload the whole web page which will not the property of react. 
+// * You can't use anchor tag replacing Link because it will reload the whole web page which will not the property of react.
 // * This is the new syntax <Route path="/Home" element={<Home/>} />
 function App() {
+  const empData = [
+    { id: 1, name: "daniel", email: "daniel@gmail.com", phone: "25346345" },
+    { id: 2, name: "sofia", email: "sofia@gmail.com", phone: "25344345" },
+    { id: 3, name: "susan", email: "susan@gmail.com", phone: "22346345" },
+    { id: 4, name: "mandy", email: "mandy@gmail.com", phone: "25346345" },
+    { id: 5, name: "olive", email: "olive@gmail.com", phone: "25346745" },
+    { id: 6, name: "jack", email: "jack@gmail.com", phone: "25386345" },
+    { id: 7, name: "randy", email: "randy@gmail.com", phone: "25346445" },
+    { id: 8, name: "joker", email: "joker@gmail.com", phone: "25346385" },
+    { id: 9, name: "robert", email: "robert@gmail.com", phone: "253436345" },
+    { id: 10, name: "stefan", email: "stefan@gmail.com", phone: "25348345" },
+    { id: 11, name: "stuart", email: "stuart@gmail.com", phone: "253443345" },
+    { id: 12, name: "stacy", email: "stacy@gmail.com", phone: "25340345" },
+    { id: 13, name: "stalin", email: "stalin@gmail.com", phone: "23346345" },
+    { id: 14, name: "steve", email: "steve@gmail.com", phone: "25346385" },
+  ];
   return (
     <div className="App">
       <h1>This is the example of Routes</h1>
       <Nav />
+      {empData.map((item) => (
+        <div key={item.id}>
+          <Link to={"/user/" + item.id}>
+            <h3>{item.name}</h3>
+          </Link>
+        </div>
+      ))}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/user/:id" element={<User />} />
         <Route path="*" element={<PageNotExist />} />
       </Routes>
     </div>
