@@ -6,7 +6,7 @@ import Home from "./Home";
 import About from "./About";
 import PageNotExist from "./PageNotExist";
 import { Route, Switch, Link } from "react-router-dom";
-// # React Router
+// # React Router (Dynamic also)
 // ! In react v6 For route you have to put all the route in the Routes tag
 // ! I have been through this same issue, the new React-Router doesn't support the exact keyword. You can simply remove it from the <Route .../> and it will work just fine.
 // ! In addition to the answers, it should be noted that starting from react-router-dom v6, <Switch /> has been replaced by <Routes />.
