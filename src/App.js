@@ -35,16 +35,24 @@ function App() {
       <Nav />
       {empData.map((item) => (
         <div key={item.id}>
-          <Link to={"/user/" + item.id}>
+          <Link to={"/user/" + item.id + "/" + item.name}>
             <h3>{item.name}</h3>
           </Link>
         </div>
       ))}
       <Switch>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="*" element={<PageNotExist />} />
+        <Route path="/" exact={true}>
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About></About>
+        </Route>
+        <Route path="/user/:id/:name">
+          <User></User>
+        </Route>
+        <Route path="*">
+          <PageNotExist></PageNotExist>
+        </Route>
       </Switch>
     </div>
   );
