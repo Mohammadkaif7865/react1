@@ -5,6 +5,7 @@ function User(props) {
     <div className="App">
       <h1>This is a user named : {props.match.params.name}</h1>
       <h1>UID : {props.match.params.id}</h1>
+      <h1>Email : {props.match.params.email}</h1>
     </div>
   );
 }

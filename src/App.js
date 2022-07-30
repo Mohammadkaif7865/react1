@@ -35,7 +35,7 @@ function App() {
       <Nav />
       {empData.map((item) => (
         <div key={item.id}>
-          <Link to={"/user/" + item.id + "/" + item.name}>
+          <Link to={`/user/${item.id}/${item.name}/${item.email}`}>
             <h3>{item.name}</h3>
           </Link>
         </div>
@@ -47,7 +47,7 @@ function App() {
         <Route path="/about">
           <About></About>
         </Route>
-        <Route path="/user/:id/:name">
+        <Route path="/user/:id/:name/:email">
           <User></User>
         </Route>
         <Route path="*">
