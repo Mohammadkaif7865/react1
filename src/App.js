@@ -5,7 +5,7 @@ import User from "./User";
 import Home from "./Home";
 import About from "./About";
 import PageNotExist from "./PageNotExist";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 // # React Router
 // ! In react v6 For route you have to put all the route in the Routes tag
 // ! I have been through this same issue, the new React-Router doesn't support the exact keyword. You can simply remove it from the <Route .../> and it will work just fine.
@@ -40,12 +40,12 @@ function App() {
           </Link>
         </div>
       ))}
-      <Routes>
+      <Switch>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="*" element={<PageNotExist />} />
-      </Routes>
+      </Switch>
     </div>
   );
 }
