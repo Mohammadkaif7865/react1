@@ -1,31 +1,33 @@
 import "./App.css";
 import React, { useState } from "react";
+// # Previous Props 
 // # Previous State in react json
-function App() {
-  let [val, setVal] = useState(0);
-  function increaseCount() {
-    // let rand = Math.floor(Math.random() * 10);
-    // setVal((pre) => {
-    //   console.log(pre);
-    //   if(pre<5){
-    //     alert("5 se CHOTA NUMBER");
-    //   }
-    //   return rand;
-    // });
-    for (let i = 0; i < 5; i++) {
-      setVal((pre) => pre + 1);
-    }
-  }
-  return (
-    <div className="container">
-      <h1>This is all about Previous State in React </h1>
-      <h2>State val is : {val}</h2>
-      <button className="btn btn-primary" onClick={increaseCount}>
-        Change
-      </button>
-    </div>
-  );
-}
+// function App() {
+//   let [val, setVal] = useState(0);
+//   function increaseCount() {
+//     // let rand = Math.floor(Math.random() * 10);
+//     // setVal((pre) => {
+//     //   console.log(pre);
+//     //   if(pre<5){
+//     //     alert("5 se CHOTA NUMBER");
+//     //   }
+//     //   return rand;
+//     // });
+//     for (let i = 0; i < 5; i++) {
+//       // setVal((pre) => pre + 1);
+//       setVal(val+1);
+//     }
+//   }
+//   return (
+//     <div className="container">
+//       <h1>This is all about Previous State in React </h1>
+//       <h2>State val is : {val}</h2>
+//       <button className="btn btn-primary" onClick={increaseCount}>
+//         Change
+//       </button>
+//     </div>
+//   );
+// }
 // # POST API in react js using form
 // import React, { useState, useEffect } from "react";
 // import Data from "./Data";
