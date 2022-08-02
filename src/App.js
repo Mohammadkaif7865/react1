@@ -1,7 +1,24 @@
 import "./App.css";
 import React, { useState } from "react";
-// # Previous Props 
+import Display from "./Display";
+// # Previous Props with Hooks
+function App() {
+  let [count, setCount] = useState(0);
+  return (
+    <div className="container">
+      <h1>Here we are storing last value of a props</h1>
+      <Display count={count}></Display>
+      <button
+        className="btn btn-primary"
+        onClick={() => setCount(Math.floor(Math.random() * 10))}
+      >
+        Change
+      </button>
+    </div>
+  );
+}
 // # Previous State in react json
+// import React, { useState } from "react";
 // function App() {
 //   let [val, setVal] = useState(0);
 //   function increaseCount() {
