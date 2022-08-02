@@ -4,9 +4,10 @@ import React, { useState } from "react";
 function App() {
   let [val, setVal] = useState(0);
   function increaseCount() {
+    let rand = Math.floor(Math.random() * 10);
     setVal((pre) => {
       console.log(pre);
-      return val + 1;
+      return rand;
     });
   }
   return (
