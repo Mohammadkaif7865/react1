@@ -4,14 +4,17 @@ import React, { useState } from "react";
 function App() {
   let [val, setVal] = useState(0);
   function increaseCount() {
-    let rand = Math.floor(Math.random() * 10);
-    setVal((pre) => {
-      console.log(pre);
-      if(pre<5){
-        alert("5 se CHOTA NUMBER");
-      }
-      return rand;
-    });
+    // let rand = Math.floor(Math.random() * 10);
+    // setVal((pre) => {
+    //   console.log(pre);
+    //   if(pre<5){
+    //     alert("5 se CHOTA NUMBER");
+    //   }
+    //   return rand;
+    // });
+    for (let i = 0; i < 5; i++) {
+      setVal((pre) => pre + 1);
+    }
   }
   return (
     <div className="container">
