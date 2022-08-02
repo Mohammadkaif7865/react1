@@ -3,11 +3,19 @@ import React, { useState } from "react";
 // # Previous State in react json
 function App() {
   let [val, setVal] = useState(0);
-
+  function increaseCount() {
+    setVal((pre) => {
+      console.log(pre);
+      return val + 1;
+    });
+  }
   return (
     <div className="container">
       <h1>This is all about Previous State in React </h1>
       <h2>State val is : {val}</h2>
+      <button className="btn btn-primary" onClick={increaseCount}>
+        Change
+      </button>
     </div>
   );
 }
