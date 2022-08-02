@@ -9,7 +9,6 @@ export default function Data() {
       });
     });
   }, []);
-  console.log(data);
   return (
     <div className="App">
       <h1>This is for API calling</h1>
@@ -17,6 +16,7 @@ export default function Data() {
         <thead>
           <tr>
             <th>S.No</th>
+            <th>_id</th>
             <th>Name</th>
             <th>Email</th>
             <th>Password</th>
@@ -26,6 +26,7 @@ export default function Data() {
           {data.map((item, i) => (
             <tr key={i}>
               <td>{i+1}</td>
+              <td>{item._id}</td>
               <td>{item.name}</td>
               <td>{item.email}</td>
               <td>{item.password}</td>
