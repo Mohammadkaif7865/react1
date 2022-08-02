@@ -1,4 +1,16 @@
 import "./App.css";
+import React, { useState } from "react";
+// # Previous State in react json
+function App() {
+  let [val, setVal] = useState(0);
+
+  return (
+    <div className="container">
+      <h1>This is all about Previous State in React </h1>
+      <h2>State val is : {val}</h2>
+    </div>
+  );
+}
 // # POST API in react js using form
 // import React, { useState, useEffect } from "react";
 // import Data from "./Data";
