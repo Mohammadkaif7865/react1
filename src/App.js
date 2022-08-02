@@ -7,6 +7,9 @@ function App() {
     let rand = Math.floor(Math.random() * 10);
     setVal((pre) => {
       console.log(pre);
+      if(pre<5){
+        alert("5 se CHOTA NUMBER");
+      }
       return rand;
     });
   }
