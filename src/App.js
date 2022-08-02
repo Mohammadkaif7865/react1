@@ -1,48 +1,48 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import Data from "./Data";
-import PageNotExist from "./PageNotExist";
-import DelAcc from "./DelAcc";import Input from "./Input";
-import Update from "./Update";
-import Home from "./Home";
-import { Route, Switch, Link } from "react-router-dom";
 // # POST API in react js using form
-function App() {
-  return (
-    <div className="container">
-      <h1 className="App">Post API in react js</h1>
-      <Link to="/">Go to Home</Link>
-      <br />
-      <Link to="/table">Go to table</Link>
-      <br />
-      <Link to="/form">Go to Form</Link>
-      <br />
-      <Link to="/delete">Go to Delete</Link>
-      <br />
-      <Link to="/Update">Go to Update</Link>
-      <Switch>
-        <Route path="/" exact={true}>
-          <Home></Home>
-        </Route>
-        <Route path="/table">
-          <Data></Data>
-        </Route>
-        <Route path="/form">
-          <Input></Input>
-        </Route>
-        <Route path="/Update">
-          <Update></Update>
-        </Route>
-        <Route path="/delete">
-          <DelAcc></DelAcc>
-        </Route>
-        <Route path="*">
-          <PageNotExist></PageNotExist>
-        </Route>
-      </Switch>
-    </div>
-  );
-}
+// import React, { useState, useEffect } from "react";
+// import Data from "./Data";
+// import PageNotExist from "./PageNotExist";
+// import DelAcc from "./DelAcc";import Input from "./Input";
+// import Update from "./Update";
+// import Home from "./Home";
+// import { Route, Switch, Link } from "react-router-dom";
+// function App() {
+//   return (
+//     <div className="container">
+//       <h1 className="App">Post API in react js</h1>
+//       <Link to="/">Go to Home</Link>
+//       <br />
+//       <Link to="/table">Go to table</Link>
+//       <br />
+//       <Link to="/form">Go to Form</Link>
+//       <br />
+//       <Link to="/delete">Go to Delete</Link>
+//       <br />
+//       <Link to="/Update">Go to Update</Link>
+//       <Switch>
+//         <Route path="/" exact={true}>
+//           <Home></Home>
+//         </Route>
+//         <Route path="/table">
+//           <Data></Data>
+//         </Route>
+//         <Route path="/form">
+//           <Input></Input>
+//         </Route>
+//         <Route path="/Update">
+//           <Update></Update>
+//         </Route>
+//         <Route path="/delete">
+//           <DelAcc></DelAcc>
+//         </Route>
+//         <Route path="*">
+//           <PageNotExist></PageNotExist>
+//         </Route>
+//       </Switch>
+//     </div>
+//   );
+// }
 // # API calling in react js GET API
 // import React, { useState, useEffect } from "react";
 // import { Table } from "react-bootstrap";
