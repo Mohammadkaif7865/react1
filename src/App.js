@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Data from "./Data";
 import PageNotExist from "./PageNotExist";
 import DelAcc from "./DelAcc";import Input from "./Input";
+import Update from "./Update";
 import Home from "./Home";
 import { Route, Switch, Link } from "react-router-dom";
 // # POST API in react js using form
@@ -17,6 +18,8 @@ function App() {
       <Link to="/form">Go to Form</Link>
       <br />
       <Link to="/delete">Go to Delete</Link>
+      <br />
+      <Link to="/Update">Go to Update</Link>
       <Switch>
         <Route path="/" exact={true}>
           <Home></Home>
@@ -26,6 +29,9 @@ function App() {
         </Route>
         <Route path="/form">
           <Input></Input>
+        </Route>
+        <Route path="/Update">
+          <Update></Update>
         </Route>
         <Route path="/delete">
           <DelAcc></DelAcc>
