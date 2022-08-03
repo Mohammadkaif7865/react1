@@ -1,6 +1,10 @@
 import "./App.css";
 import React, { useState } from "react";
 import Display from "./Display";
+// # There are multiple way to pass data from one component to another
+// #1 By using props 
+// #2 by passing function as props
+// #3 Using React ContextAPI or State management library like Redux.
 // # Previous Props with Hooks
 function App() {
   let [count, setCount] = useState(0);
