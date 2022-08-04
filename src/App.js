@@ -1,26 +1,47 @@
 import "./App.css";
+// # React common context
 import React, { useState } from "react";
-import Display from "./Display";
-// # There are multiple way to pass data from one component to another
-// #1 By using props 
-// #2 by passing function as props
-// #3 Using React ContextAPI or State management library like Redux.
-// # Previous Props with Hooks
+import { CommonContext } from "./Components/CommonContext";
+import Main from "./Components/Main";
+import UpdateButton from "./Components/UpdateButton";
 function App() {
-  let [count, setCount] = useState(0);
+  let [color, setColor] = useState("red");
+  function updateColor(color) {
+    setColor(color);
+  }
   return (
     <div className="container">
-      <h1>Here we are storing last value of a props</h1>
-      <Display count={count}></Display>
-      <button
-        className="btn btn-primary"
-        onClick={() => setCount(Math.floor(Math.random() * 10))}
-      >
-        Change
-      </button>
+      <CommonContext.Provider value={{ color, updateColor }}>
+        <h1>Here we are learning about React common context</h1>
+        <Main></Main>
+        <UpdateButton></UpdateButton>
+      </CommonContext.Provider>
     </div>
   );
 }
+
+// # There are multiple way to pass data from one component to another
+// #1 By using props
+// #2 by passing function as props
+// #3 Using React ContextAPI or State management library like Redux.
+// # Previous Props with Hooks
+// import React, { useState } from "react";
+// import Display from "./Display";
+// function App() {
+//   let [count, setCount] = useState(0);
+//   return (
+//     <div className="container">
+//       <h1>Here we are storing last value of a props</h1>
+//       <Display count={count}></Display>
+//       <button
+//         className="btn btn-primary"
+//         onClick={() => setCount(Math.floor(Math.random() * 10))}
+//       >
+//         Change
+//       </button>
+//     </div>
+//   );
+// }
 // # Previous State in react json
 // import React, { useState } from "react";
 // function App() {
