@@ -1,24 +1,32 @@
 import "./App.css";
 // # React common context
-import React, { useState } from "react";
-import { CommonContext } from "./Components/CommonContext";
-import Main from "./Components/Main";
-import UpdateButton from "./Components/UpdateButton";
+import React, {useState} from "react";
 function App() {
-  let [color, setColor] = useState("red");
-  function updateColor(color) {
-    setColor(color);
-  }
-  return (
+  return(
     <div className="container">
-      <CommonContext.Provider value={{ color, updateColor }}>
-        <h1>Here we are learning about React common context</h1>
-        <Main></Main>
-        <UpdateButton></UpdateButton>
-      </CommonContext.Provider>
+      <h1> This is the authentication Page</h1>
     </div>
-  );
+  )
 }
+// import React, { useState } from "react";
+// import { CommonContext } from "./Components/CommonContext";
+// import Main from "./Components/Main";
+// import UpdateButton from "./Components/UpdateButton";
+// function App() {
+//   let [color, setColor] = useState("red");
+//   function updateColor(color) {
+//     setColor(color);
+//   }
+//   return (
+//     <div className="container">
+//       <CommonContext.Provider value={{ color, updateColor }}>
+//         <h1>Here we are learning about React common context</h1>
+//         <Main></Main>
+//         <UpdateButton></UpdateButton>
+//       </CommonContext.Provider>
+//     </div>
+//   );
+// }
 
 // # There are multiple way to pass data from one component to another
 // #1 By using props
