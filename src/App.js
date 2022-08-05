@@ -1,5 +1,4 @@
 import "./App.css";
-// # React common context
 import React, {useState} from "react";
 function App() {
   return(
@@ -8,6 +7,7 @@ function App() {
     </div>
   )
 }
+// # React common context
 // import React, { useState } from "react";
 // import { CommonContext } from "./Components/CommonContext";
 // import Main from "./Components/Main";
