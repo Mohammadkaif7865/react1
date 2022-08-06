@@ -8,18 +8,18 @@ function App() {
   let [password, setPassword] = useState("");
   let [role, setRole] = useState("");
   function login(e) {
-   e.preventDefault();
-   let data = {name,email,password,role};
-   fetch("https://authmdkaif.herokuapp.com/api/auth/register", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then((result) => {
-    console.log("result ", result);
-  });
+    e.preventDefault();
+    let data = { name, email, password, role };
+    fetch("https://authmdkaif.herokuapp.com/api/auth/register", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((result) => {
+      console.log("result ", result);
+    });
   }
   return (
     <div className="container">
