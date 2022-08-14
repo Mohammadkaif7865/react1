@@ -959,7 +959,7 @@ function App() {
 //    shouldComponentUpdate(){
 //       console.log('This the component should update function');
 //       return this.state.count%2===0;
-//       // * it is used conditionally display the update
+//       // * it is used conditionally display the updat
 //       // return true;
 //    }
 //    componentDidUpdate(preProps,preState,snapshots){
